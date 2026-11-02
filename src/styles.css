@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Archivo';
-  src: url('/fonts/archivo.woff2') format('woff2');
+  src: url('fonts/archivo.woff2') format('woff2');
   font-weight: 100 900;
   font-stretch: 62% 125%;
   font-display: swap;

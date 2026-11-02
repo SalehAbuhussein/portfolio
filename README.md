@@ -2,7 +2,7 @@
 
 Personal portfolio site built with Angular 22 and prerendered to static HTML.
 
-Live: https://salehabuhussein.github.io/
+Live: https://salehabuhussein.github.io/portfolio/
 
 ## Run locally
 

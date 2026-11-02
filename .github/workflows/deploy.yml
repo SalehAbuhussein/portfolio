@@ -24,7 +24,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx ng build
+      - run: npx ng build --base-href /portfolio/
       - uses: actions/upload-pages-artifact@v5
         with:
           path: dist/saleh-portfolio/browser
