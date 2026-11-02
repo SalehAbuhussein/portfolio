@@ -1,0 +1,37 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="#top">{{ profile.name }}</a>
+    <nav aria-label="Main">
+      <ul>
+        @for (item of nav; track item.href) {
+          <li><a [href]="item.href">{{ item.label }}</a></li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container" tabindex="-1">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <h1 id="hero-title">{{ profile.name }}</h1>
+    <p class="headline">{{ profile.headline }}</p>
+    <p class="intro">{{ profile.intro }}</p>
+    <p class="actions">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </section>
+  <app-about />
+  <app-skills />
+  <app-projects />
+  <app-experience />
+  <app-contact />
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ year }} {{ profile.name }}</p>
+  </div>
+</footer>
