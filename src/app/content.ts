@@ -5,10 +5,9 @@ export interface Profile {
   intro: string;
 }
 
-export interface Skill {
-  id: string;
-  label: string;
-  iconUrl: string;
+export interface SkillGroup {
+  title: string;
+  items: string[];
 }
 
 export interface Project {
@@ -50,44 +49,32 @@ export const profile: Profile = {
     'I work on the frontend at Motory, an automotive marketplace. I was one of four developers who rebuilt its jQuery platform in Angular. I built the multi-criteria filtering system used across the platform, and cut image payload on Mazad by 80% to improve LCP.',
 };
 
+export const copy = {
+  netClaim: 'I also build back ends with ASP.NET Core and SQL Server, on databases I design by hand.',
+  aboutLead: 'I build Angular apps for Motory, an automotive marketplace, and I like owning the whole path from database table to rendered page.',
+  aboutBody: 'At Motory I work in Angular, TypeScript, RxJS and Signals. On the side I build full-stack projects with ASP.NET Core and SQL Server.',
+  contactTitle: "Hiring for Angular or full-stack .NET? Let's talk.",
+};
+
 export const education: Education = {
   school: 'Balqa University',
   degree: "Bachelor's degree, Computer Engineering",
   period: '2018 to 2023',
 };
 
-const icon = (id: string, label: string): Skill => ({
-  id,
-  label,
-  iconUrl: `https://skillicons.dev/icons?i=${id}`,
-});
-
-export const skillIcons: Skill[] = [
-  icon('html', 'HTML'),
-  icon('css', 'CSS'),
-  icon('js', 'JavaScript'),
-  icon('angular', 'Angular'),
-  icon('ts', 'TypeScript'),
-  icon('rxjs', 'RxJS'),
-  icon('sass', 'Sass'),
-  icon('cs', 'C#'),
-  icon('dotnet', '.NET'),
-  icon('git', 'Git'),
-  icon('bitbucket', 'Bitbucket'),
-];
-
-export const skillTags: string[] = [
-  'Angular SSR',
-  'Signals',
-  'Angular Material',
-  'Storybook',
-  'Jasmine / Vitest',
-  'Firebase',
-  'ASP.NET Core',
-  'SQL Server',
-  'REST APIs',
-  'Jira',
-  'Agile / Scrum',
+export const skillGroups: SkillGroup[] = [
+  {
+    title: 'Frontend',
+    items: ['Angular', 'TypeScript', 'RxJS', 'Signals', 'Angular SSR', 'Angular Material', 'Storybook', 'HTML', 'CSS / Sass', 'JavaScript'],
+  },
+  {
+    title: 'Back end',
+    items: ['C#', 'ASP.NET Core', 'REST APIs', 'SQL Server', 'ADO.NET', 'Firebase'],
+  },
+  {
+    title: 'Testing and team',
+    items: ['Jasmine', 'Vitest', 'Git', 'Bitbucket', 'Jira', 'Agile / Scrum'],
+  },
 ];
 
 const gh = (repo: string) => `https://github.com/SalehAbuhussein/${repo}`;

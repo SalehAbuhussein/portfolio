@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T00:00:00Z",
+  "title": "Design System: Saleh Abuhussein portfolio",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Uncoated Stock", "canonical": "#f2f1ec", "tonalRamp": ["oklch(15% 0.006 100)", "oklch(25% 0.006 100)", "oklch(35% 0.006 100)", "oklch(45% 0.006 100)", "oklch(55% 0.006 100)", "oklch(65% 0.006 100)", "oklch(80% 0.006 100)", "oklch(95.5% 0.006 100)"] },
+      "ink": { "role": "neutral", "displayName": "Press Black", "canonical": "#111111", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(45% 0 0)", "oklch(55% 0 0)", "oklch(65% 0 0)", "oklch(80% 0 0)", "oklch(95% 0 0)"] },
+      "ink-2": { "role": "neutral", "displayName": "Graphite", "canonical": "#4a4a46", "tonalRamp": ["oklch(15% 0.006 106)", "oklch(25% 0.006 106)", "oklch(35% 0.006 106)", "oklch(45% 0.006 106)", "oklch(55% 0.006 106)", "oklch(65% 0.006 106)", "oklch(80% 0.006 106)", "oklch(95% 0.006 106)"] },
+      "rule": { "role": "neutral", "displayName": "Rule Black", "canonical": "#111111", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(45% 0 0)", "oklch(55% 0 0)", "oklch(65% 0 0)", "oklch(80% 0 0)", "oklch(95% 0 0)"] },
+      "red": { "role": "primary", "displayName": "Signal Red", "canonical": "#e3262b", "tonalRamp": ["oklch(15% 0.06 27)", "oklch(25% 0.1 27)", "oklch(35% 0.14 27)", "oklch(45% 0.18 27)", "oklch(59.5% 0.22 27)", "oklch(65% 0.19 27)", "oklch(80% 0.1 27)", "oklch(95% 0.025 27)"] },
+      "red-ink": { "role": "primary", "displayName": "Red Ink", "canonical": "#b3171c", "tonalRamp": ["oklch(15% 0.06 27)", "oklch(25% 0.1 27)", "oklch(35% 0.14 27)", "oklch(49% 0.19 27)", "oklch(55% 0.2 27)", "oklch(65% 0.19 27)", "oklch(80% 0.1 27)", "oklch(95% 0.025 27)"] },
+      "on-red": { "role": "neutral", "displayName": "White on Red", "canonical": "#ffffff", "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(45% 0 0)", "oklch(55% 0 0)", "oklch(65% 0 0)", "oklch(80% 0 0)", "oklch(100% 0 0)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The name only, uppercase, fitted to span the full grid (12.6cqi, fallback clamp(2.25rem, 11vw, 6rem))." },
+      "headline": { "displayName": "Headline", "purpose": "The contact field statement, balanced, max 16ch." },
+      "section-title": { "displayName": "Section title", "purpose": "Band titles in the left three columns, each an anchor link." },
+      "lead": { "displayName": "Lead", "purpose": "The hero role claim; the about lead is a lighter sibling at 700." },
+      "title": { "displayName": "Title", "purpose": "Experience row headings; project headings run one step smaller." },
+      "body": { "displayName": "Body", "purpose": "All running text with tabular figures, held to 60 to 68ch." },
+      "label": { "displayName": "Label", "purpose": "Project group labels and the education term, in Red Ink." }
+    },
+    "fontSource": {
+      "family": "Archivo variable",
+      "file": "public/fonts/archivo.woff2",
+      "package": "@fontsource-variable/archivo 5.2.5",
+      "license": "SIL Open Font License",
+      "axes": { "wght": "100 900", "wdth": "62% 125%" }
+    },
+    "assets": [
+      { "file": "public/avatar-portrait.jpg", "provenance": "Grayscale head-and-shoulders crop of the GitHub avatar https://avatars.githubusercontent.com/u/98553562", "usage": "Hero portrait, one grid cell, max 160px, grayscale(1) contrast(1.15), mix-blend-mode multiply." }
+    ],
+    "shadows": [],
+    "motion": [
+      { "name": "rule-draw", "value": "clip-path inset(0 100% 0 0) to inset(0 0 0 0), 900ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The red rule under the name draws in from the left once on load." },
+      { "name": "state", "value": "200ms ease-out", "purpose": "Email button fill change and project arrow nudge on hover." },
+      { "name": "reduced-motion", "value": "animation: none; transition: none; scroll-behavior: auto", "purpose": "Applied under prefers-reduced-motion: reduce." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "720px" },
+      { "name": "skills", "value": "760px" },
+      { "name": "lg", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid ink block for the single primary action, the hero email link.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Email me</a>",
+      "css": ".ds-btn-primary { display: inline-block; padding: 12px 20px; background: #111111; color: #f2f1ec; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 1.125rem; text-decoration: none; border-radius: 0; transition: background-color 200ms ease-out; } .ds-btn-primary:hover { background: #e3262b; color: #ffffff; } .ds-btn-primary:focus-visible { outline: 3px solid #e3262b; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Monogram left, section links right, underline in red on hover.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\">SA</a><ul><li><a href=\"#\">Skills</a></li><li><a href=\"#\">Experience</a></li><li><a href=\"#\">Projects</a></li><li><a href=\"#\">About</a></li><li><a href=\"#\">Contact</a></li></ul></header>",
+      "css": ".ds-nav { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 32px; background: #f2f1ec; color: #111111; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-nav a { color: inherit; text-decoration: none; } .ds-nav-mark { font-weight: 900; font-size: 1.25rem; letter-spacing: -0.04em; } .ds-nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; margin: 0; padding: 0; list-style: none; } .ds-nav ul a { font-size: 0.9375rem; font-weight: 600; } .ds-nav ul a:hover { color: #b3171c; text-decoration: underline; text-decoration-color: #e3262b; text-decoration-thickness: 1px; text-underline-offset: 0.2em; } .ds-nav a:focus-visible { outline: 3px solid #e3262b; outline-offset: 3px; }"
+    },
+    {
+      "name": "Skill Cells",
+      "kind": "custom",
+      "refersTo": "skill-cell",
+      "description": "Identical ruled cells sharing 1px black edges, read like a ruler.",
+      "html": "<ul class=\"ds-cells\"><li>Angular</li><li>TypeScript</li><li>RxJS</li><li>Signals</li><li>Angular SSR</li></ul>",
+      "css": ".ds-cells { display: grid; grid-template-columns: repeat(5, 1fr); margin: 0; padding: 0; list-style: none; border-top: 1px solid #111111; border-left: 1px solid #111111; background: #f2f1ec; color: #111111; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-cells li { padding: 14px 12px; border-right: 1px solid #111111; border-bottom: 1px solid #111111; font-weight: 600; font-size: 0.9375rem; line-height: 1.2; }"
+    },
+    {
+      "name": "Numbered Row",
+      "kind": "custom",
+      "refersTo": "numbered-row",
+      "description": "Ruled list row with a Red Ink two-digit index in a 3ch margin column.",
+      "html": "<ol class=\"ds-rows\"><li><span class=\"ds-idx\">01</span><div><div class=\"ds-row-head\"><h3>Frontend developer, Motory</h3><p class=\"ds-period\">2022 to now</p></div><ul class=\"ds-bullets\"><li>Rebuilt the jQuery marketplace in Angular with a team of four.</li></ul></div></li></ol>",
+      "css": ".ds-rows { margin: 0; padding: 0; list-style: none; background: #f2f1ec; color: #111111; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1.0625rem; line-height: 1.55; } .ds-rows > li { display: grid; grid-template-columns: 3ch 1fr; column-gap: 16px; padding-block: 20px; border-top: 1px solid #111111; } .ds-rows > li:last-child { border-bottom: 1px solid #111111; } .ds-idx { font-size: 0.875rem; font-weight: 700; color: #b3171c; padding-top: 0.2em; font-variant-numeric: tabular-nums; } .ds-row-head { display: flex; justify-content: space-between; gap: 24px; } .ds-row-head h3 { margin: 0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; } .ds-period { margin: 0; padding-top: 0.3em; font-size: 0.875rem; font-weight: 600; color: #4a4a46; } .ds-bullets { margin: 4px 0 0; padding: 0; list-style: none; } .ds-bullets li { position: relative; padding-left: 18px; color: #4a4a46; } .ds-bullets li::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 8px; height: 2px; background: #e3262b; }"
+    },
+    {
+      "name": "Red Rule",
+      "kind": "custom",
+      "refersTo": "red",
+      "description": "Thick Signal Red bar under the name that draws in from the left once.",
+      "html": "<div class=\"ds-red-rule\"></div>",
+      "css": ".ds-red-rule { height: 16px; background: #e3262b; animation: ds-draw 900ms cubic-bezier(0.16, 1, 0.3, 1) both; } @keyframes ds-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } } @media (prefers-reduced-motion: reduce) { .ds-red-rule { animation: none; } }"
+    },
+    {
+      "name": "Contact Field",
+      "kind": "custom",
+      "refersTo": "contact-field",
+      "description": "Full-bleed Signal Red band with a white headline, email and profile links.",
+      "html": "<section class=\"ds-field\"><h2>Hiring for Angular or full-stack .NET? Let's talk.</h2><a class=\"ds-field-mail\" href=\"#\">name@example.com</a><ul><li><a href=\"#\">LinkedIn</a></li><li><a href=\"#\">GitHub</a></li></ul></section>",
+      "css": ".ds-field { display: grid; row-gap: 28px; padding: 64px 32px; background: #e3262b; color: #ffffff; font-family: Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif; } .ds-field h2 { margin: 0; font-size: 3rem; font-weight: 900; font-stretch: 108%; line-height: 0.95; letter-spacing: -0.035em; max-width: 16ch; text-wrap: balance; } .ds-field a { color: inherit; text-underline-offset: 0.2em; } .ds-field-mail { justify-self: start; font-size: 1.5rem; font-weight: 700; text-decoration-color: currentColor; text-decoration-thickness: 2px; } .ds-field ul { display: flex; gap: 24px; margin: 0; padding: 0; list-style: none; font-weight: 700; } .ds-field a:hover { color: #111111; } .ds-field a:focus-visible { outline: 3px solid #111111; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Swiss Grid Poster",
+    "overview": "The whole site is one printed poster: uncoated off-white stock, black ink, and a single red. Everything sits on a 12-column grid, flush left and ragged right, divided by 1px black rules. There are no cards, no shadows and no rounded corners; structure comes from the grid, the rules and the weight of the type.\n\nThe name is the image. It runs at full grid width in heavy, slightly widened Archivo capitals, with a thick red bar drawn under it. Below that, the page reads as a stack of ruled bands, each with its title in the left three columns and its content in the right nine. Lists are numbered in a margin column, skills sit in identical ruled cells like marks on a ruler, and the page ends in a solid red contact field.\n\nDensity is moderate: generous band padding, tight display leading, body text held to readable measures (60 to 68ch). The only photograph is a small grayscale portrait in a single grid cell, multiplied into the paper.",
+    "keyCharacteristics": [
+      "12-column grid, 1200px max, every section aligned to the same columns.",
+      "One typeface (Archivo variable), weight and width carry the hierarchy.",
+      "Black ink on off-white; red only for rules, the contact field, focus and hover.",
+      "1px black rules divide bands, rows and cells; nothing is boxed or raised.",
+      "Square corners everywhere."
+    ],
+    "rules": [
+      { "name": "The Two Inks Rule", "body": "Black and red are the only inks. Red marks structure (rules, the contact field) and interaction (focus, hover); it does not decorate.", "section": "colors" },
+      { "name": "The Red Ink Rule", "body": "Small red text on paper uses Red Ink, never Signal Red.", "section": "colors" },
+      { "name": "The One Face Rule", "body": "Archivo is the only typeface. Hierarchy comes from weight, width and size, not from a second family.", "section": "typography" },
+      { "name": "The Sentence Case Rule", "body": "Only the name is set in capitals. Everything else is sentence case with no letter-spacing added.", "section": "typography" },
+      { "name": "The Shared Columns Rule", "body": "Every element starts and ends on a grid column line. No free-floating widths except text measures in ch.", "section": "layout" },
+      { "name": "The Flat Stock Rule", "body": "Nothing lifts off the page. A surface change means a different ink (black button, red field), never a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do align every element to the 12-column grid and keep text flush left, ragged right.",
+      "Do separate sections, rows and cells with 1px Rule Black (#111111) lines.",
+      "Do reserve Signal Red (#e3262b) for rules, the contact field, focus outlines, underlines and hover fills; use Red Ink (#b3171c) for small red text on paper.",
+      "Do build hierarchy from Archivo's weight and width axes alone.",
+      "Do give every section title an anchor link to its own section.",
+      "Do honor reduced motion: the red rule draw and hover transitions switch off."
+    ],
+    "donts": [
+      "Don't round any corner; the system radius is 0px.",
+      "Don't add shadows, glows or raised surfaces.",
+      "Don't wrap content in filled or bordered cards; cells exist only as shared rules, as in the skill grid.",
+      "Don't add a second typeface or a third ink color.",
+      "Don't set Signal Red text on the paper background.",
+      "Don't center-align text blocks."
+    ]
+  }
+}

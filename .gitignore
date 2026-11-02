@@ -45,3 +45,7 @@ Thumbs.db
 
 # Angular cache
 /.angular
+
+/.impeccable/review
+/.impeccable/round1.json
+/.impeccable/brief.md

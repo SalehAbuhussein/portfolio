@@ -1,38 +1,51 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { skillIcons, skillTags } from '../content';
+import { skillGroups } from '../content';
 
 @Component({
   selector: 'app-skills',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
-      <ul class="icons">
-        @for (s of icons; track s.id) {
-          <li>
-            <img [src]="s.iconUrl" [alt]="s.label" width="48" height="48" loading="lazy" />
-            <span>{{ s.label }}</span>
-          </li>
+    <section class="grid band" id="skills" aria-labelledby="skills-title">
+      <h2 class="band-title" id="skills-title"><a href="#skills">Skills</a></h2>
+      <div class="band-body">
+        @for (g of groups; track g.title) {
+          <h3>{{ g.title }}</h3>
+          <ul class="cells">
+            @for (item of g.items; track item) {
+              <li>{{ item }}</li>
+            }
+            @for (n of filler(g.items.length); track $index) {
+              <li aria-hidden="true"></li>
+            }
+          </ul>
         }
-      </ul>
-      <ul class="tags">
-        @for (t of tags; track t) {
-          <li>{{ t }}</li>
-        }
-      </ul>
+      </div>
     </section>
   `,
   styles: `
-    ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; }
-    .icons li { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; width: 5rem;
-      font-size: 0.8rem; color: var(--muted); text-align: center; }
-    .icons img { border-radius: var(--radius); }
-    .tags { margin-top: 2rem; }
-    .tags li { padding: 0.25rem 0.75rem; border: 1px solid var(--border); border-radius: 999px;
-      background: var(--surface); font-size: 0.9rem; }
+    h3 { font-size: 0.9375rem; font-weight: 700; margin: 0 0 12px; }
+    h3:not(:first-child) { margin-top: 32px; }
+    .cells {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+    }
+    .cells li {
+      padding: 14px 12px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      line-height: 1.2;
+    }
+    @media (min-width: 760px) { .cells { grid-template-columns: repeat(5, 1fr); } }
   `,
 })
 export class Skills {
-  protected readonly icons = skillIcons;
-  protected readonly tags = skillTags;
+  protected readonly groups = skillGroups;
+  // ponytail: pads to a multiple of 10 so rows close at both 2 and 5 columns
+  protected filler(count: number) {
+    return Array.from({ length: (10 - (count % 10)) % 10 });
+  }
 }

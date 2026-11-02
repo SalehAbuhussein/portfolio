@@ -1,37 +1,40 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="container bar">
-    <a class="brand" href="#top">{{ profile.name }}</a>
-    <nav aria-label="Main">
-      <ul>
-        @for (item of nav; track item.href) {
-          <li><a [href]="item.href">{{ item.label }}</a></li>
-        }
-      </ul>
-    </nav>
-  </div>
+<header class="grid top">
+  <a class="mark" href="#top" aria-label="Saleh Abuhussein, back to top">SA</a>
+  <nav aria-label="Main">
+    <ul>
+      @for (item of nav; track item.href) {
+        <li><a [href]="item.href">{{ item.label }}</a></li>
+      }
+    </ul>
+  </nav>
 </header>
 
-<main id="main" class="container" tabindex="-1">
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <h1 id="hero-title">{{ profile.name }}</h1>
-    <p class="headline">{{ profile.headline }}</p>
+<main id="main" tabindex="-1">
+  <section class="grid hero" id="top" aria-labelledby="hero-title">
+    <h1 id="hero-title">{{ firstName }}<br />{{ lastName }}</h1>
+    <div class="red-rule" aria-hidden="true"></div>
+
+    <p class="claim lead">{{ profile.headline }} at <a href="#experience">Motory</a>.</p>
+    <p class="claim net">{{ copy.netClaim }}</p>
+    <div class="claim contact-cell">
+      <a class="email" [href]="'mailto:' + links.email">Email me</a>
+      <p class="muted">{{ profile.location }}</p>
+    </div>
+
+    <img class="avatar" src="avatar-portrait.jpg" width="160" height="160" alt="Portrait of Saleh Abuhussein" />
     <p class="intro">{{ profile.intro }}</p>
-    <p class="actions">
-      <a class="btn btn-primary" href="#projects">View projects</a>
-      <a class="btn" [href]="links.linkedin" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
   </section>
-  <app-about />
+
   <app-skills />
-  <app-projects />
   <app-experience />
+  <app-projects />
+  <app-about />
   <app-contact />
 </main>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; {{ year }} {{ profile.name }}</p>
-  </div>
+<footer class="grid foot">
+  <p>&copy; {{ year }} {{ profile.name }}</p>
+  <p><a [href]="links.github" target="_blank" rel="noopener">GitHub</a></p>
 </footer>
