@@ -264,6 +264,23 @@ h1 {
   padding: 24px;
 }
 
+.ico {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  color: var(--accent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), color-mix(in srgb, var(--accent-2) 14%, transparent));
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+  transition: transform 400ms var(--ease);
+}
+
+.stats li:hover .ico {
+  transform: rotate(-8deg) scale(1.08);
+}
+
 .num {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 900;

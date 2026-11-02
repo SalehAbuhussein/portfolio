@@ -33,9 +33,9 @@ export class App {
     { href: '#contact', label: 'Contact' },
   ];
   protected readonly stats = [
-    { value: 3, suffix: '+', label: 'years of production Angular at Motory' },
-    { value: 3, suffix: '', label: 'products rebuilt in Angular: Motory, Motory Shop and Mazad' },
-    { value: 4, suffix: '', label: 'developers rebuilt the platform from jQuery' },
+    { icon: 'years', value: 3, suffix: '+', label: 'years of production Angular at Motory' },
+    { icon: 'products', value: 3, suffix: '', label: 'products rebuilt in Angular: Motory, Motory Shop and Mazad' },
+    { icon: 'team', value: 4, suffix: '', label: 'developers rebuilt the platform from jQuery' },
   ];
 
   constructor() {
