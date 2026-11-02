@@ -1,51 +1,42 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { skillGroups } from '../content';
+import { Reveal } from '../reveal';
 
 @Component({
   selector: 'app-skills',
+  imports: [Reveal],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <section class="grid band" id="skills" aria-labelledby="skills-title">
-      <h2 class="band-title" id="skills-title"><a href="#skills">Skills</a></h2>
-      <div class="band-body">
-        @for (g of groups; track g.title) {
-          <h3>{{ g.title }}</h3>
-          <ul class="cells">
-            @for (item of g.items; track item) {
-              <li>{{ item }}</li>
-            }
-            @for (n of filler(g.items.length); track $index) {
-              <li aria-hidden="true"></li>
-            }
-          </ul>
+    <section class="container section" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title" appReveal>Skills<span class="dot">.</span></h2>
+      <div class="groups">
+        @for (g of groups; track g.title; let i = $index) {
+          <div class="card group" [appReveal]="i * 120">
+            <h3>{{ g.title }}</h3>
+            <ul>
+              @for (item of g.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          </div>
         }
       </div>
     </section>
   `,
   styles: `
-    h3 { font-size: 0.9375rem; font-weight: 700; margin: 0 0 12px; }
-    h3:not(:first-child) { margin-top: 32px; }
-    .cells {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      border-top: 1px solid var(--rule);
-      border-left: 1px solid var(--rule);
+    .groups { display: grid; gap: 16px; }
+    @media (min-width: 900px) { .groups { grid-template-columns: repeat(3, 1fr); } }
+    .group { padding: 28px; }
+    h3 { font-size: 1.125rem; font-weight: 800; margin-bottom: 16px; }
+    ul { display: flex; flex-wrap: wrap; gap: 8px; }
+    li {
+      padding: 6px 12px; border-radius: 999px; font-size: 0.875rem; font-weight: 600;
+      border: 1px solid var(--border); background: var(--bg);
+      transition: border-color 250ms ease-out, color 250ms ease-out, transform 300ms var(--ease);
     }
-    .cells li {
-      padding: 14px 12px;
-      border-right: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      font-weight: 600;
-      font-size: 0.9375rem;
-      line-height: 1.2;
-    }
-    @media (min-width: 760px) { .cells { grid-template-columns: repeat(5, 1fr); } }
+    li:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
   `,
 })
 export class Skills {
   protected readonly groups = skillGroups;
-  // ponytail: pads to a multiple of 10 so rows close at both 2 and 5 columns
-  protected filler(count: number) {
-    return Array.from({ length: (10 - (count % 10)) % 10 });
-  }
 }
