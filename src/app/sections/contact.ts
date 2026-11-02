@@ -25,6 +25,7 @@ import { copy, links } from '../content';
     a { text-decoration-color: currentColor; }
     a:hover { color: inherit; text-decoration-thickness: 3px; }
     ul { display: flex; gap: 24px; font-weight: 700; }
+    ul a { display: inline-flex; align-items: center; min-height: 44px; }
     a:focus-visible { outline-color: var(--ink); }
     ::selection { background: var(--ink); color: var(--paper); }
   `,

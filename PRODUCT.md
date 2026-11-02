@@ -26,7 +26,7 @@ Plain, human voice: no em dashes, no emoji, no hype words, sentence-case heading
 
 ## Evidence on Hand
 - Experience, education, summary: LinkedIn export, captured in `src/app/content.ts`.
-- Photo: GitHub avatar https://avatars.githubusercontent.com/u/98553562?v=4
+- Photo: none on the site, by the owner's choice.
 - Projects: public GitHub repos (Clinic-Management-System, aspnetcore-guide, Angular-Material-Storybook, Angular-Movies, Car-Rental-System, Cafe-POS); DVLD has no public repo.
 - No testimonials, client logos, metrics beyond the LinkedIn facts. Do not fabricate any.
 

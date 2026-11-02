@@ -216,7 +216,7 @@ The thick Signal Red bar under the name, full grid width, 12px to 20px tall. It 
 A full-bleed Signal Red band that ends the page. Headline text and a large bold email address (clamp(1.125rem, 3vw, 1.75rem), 700, 2px underline in currentColor) in white, LinkedIn and GitHub links beside each other at weight 700. Inside the field, hover turns text Press Black, focus outlines switch to Press Black, and selection inverts to black on paper.
 
 ### Portrait
-`public/avatar-portrait.jpg`: a grayscale head-and-shoulders crop of the GitHub avatar at https://avatars.githubusercontent.com/u/98553562. Shown square in one grid cell, at most 160px, with `grayscale(1) contrast(1.15)` and multiply blending. It is the only photograph on the site.
+None. The owner removed the photo; the page is type only.
 
 ## Do's and Don'ts
 
