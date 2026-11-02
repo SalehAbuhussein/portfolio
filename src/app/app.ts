@@ -34,7 +34,7 @@ export class App {
   ];
   protected readonly stats = [
     { value: 3, suffix: '+', label: 'years of production Angular at Motory' },
-    { value: 80, suffix: '%', label: 'less image payload on the Mazad landing page' },
+    { value: 3, suffix: '', label: 'products rebuilt in Angular: Motory, Motory Shop and Mazad' },
     { value: 4, suffix: '', label: 'developers rebuilt the platform from jQuery' },
   ];
 
